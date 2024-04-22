@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ngrpc;
+
+option go_package = "github.com/nbs-go/ngrpc";
+
+message ErrorDetails {
+  string code = 1;
+  string message = 2;
+  Source source = 3;
+
+  message Source {
+    string message = 1;
+    repeated string traces = 2;
+    map<string, string> metadata = 3;
+  }
+}
