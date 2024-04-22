@@ -14,6 +14,7 @@ const (
 	HeaderRequestId        = "x-request-id"
 	HeaderHttpStatus       = "x-http-status"
 	HeaderUserAgent        = "user-agent"
+	HeaderContentType      = "Content-Type"
 )
 
 type ContextKey string
