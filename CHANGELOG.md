@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.1
+
+- fix: Upgrade Go dependency version to 1.19
+
 ## v0.1.0
 
 - feat(gateway): Add gRPC Gateway Handlers
