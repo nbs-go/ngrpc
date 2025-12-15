@@ -16,3 +16,17 @@ proto:
 		--go-grpc_opt paths=source_relative \
 		${NGRPC_PROTO_SRC_DIR}/*.proto
 	@-echo "  > proto: Done"
+
+## configure: Install toolchain
+
+GOBIN = ${NGRPC_DIR}/.tmp/go/bin
+PROTOC_GEN_GO_VERSION := "v1.36.10"
+PROTOC_GEN_GO_GRPC_VERSION := "v1.6.0"
+PROTOBUF_VERSION := "31.1"
+
+.PHONY: configure
+configure:
+	@-echo "  > configure: Installing generators for Go gRPC..."
+	@-(mise ls -i protobuf | grep ${PROTOBUF_VERSION}) || MISE_HTTP_TIMEOUT=60 mise use protobuf@${PROTOBUF_VERSION}
+	@-go install google.golang.org/protobuf/cmd/protoc-gen-go@${PROTOC_GEN_GO_VERSION}
+	@-echo "  > configure: Done"
