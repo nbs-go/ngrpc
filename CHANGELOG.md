@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v0.1.2
+
+- fix(proto): Generate proto using protoc-gen-go v1.36.10 and protoc v6.31.1
+
 ## v0.1.1
 
 - fix: Upgrade Go dependency version to 1.19
